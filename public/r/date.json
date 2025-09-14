@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date",
+  "type": "registry:lib",
+  "title": "Date Helpers",
+  "description": "A set of date helper functions for formatting and manipulating dates.",
+  "dependencies": [],
+  "files": [
+    {
+      "path": "src/registry/util/date.ts",
+      "content": "const LOCALE = \"en-AU\";\n\nconst shortDateFormatter = new Intl.DateTimeFormat(LOCALE, {\n  dateStyle: \"short\",\n});\n\nconst mediumDateFormatter = new Intl.DateTimeFormat(LOCALE, {\n  dateStyle: \"medium\",\n});\n\nconst longDateFormatter = new Intl.DateTimeFormat(LOCALE, {\n  dateStyle: \"long\",\n});\n\nconst timeFormatter = new Intl.DateTimeFormat(LOCALE, {\n  hour: \"2-digit\",\n  minute: \"2-digit\",\n  hour12: true,\n});\n\nconst dateTimeFormatter = new Intl.DateTimeFormat(LOCALE, {\n  dateStyle: \"medium\",\n  timeStyle: \"short\",\n});\n\nexport function formatDate(\n  date: Date,\n  style: \"short\" | \"medium\" | \"long\",\n): string {\n  switch (style) {\n    case \"short\":\n      return shortDateFormatter.format(date);\n    case \"medium\":\n      return mediumDateFormatter.format(date);\n    default:\n      return longDateFormatter.format(date);\n  }\n}\n\nexport function formatTime(date: Date): string {\n  return timeFormatter.format(date);\n}\n\nexport function formatDateTime(date: Date): string {\n  return dateTimeFormatter.format(date);\n}\n",
+      "type": "registry:lib"
+    }
+  ]
+}

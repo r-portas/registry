@@ -2,5 +2,18 @@
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "rportas",
   "homepage": "https://ui.royportas.com",
-  "items": []
+  "items": [
+    {
+      "name": "date",
+      "type": "registry:lib",
+      "title": "Date Helpers",
+      "description": "A set of date helper functions for formatting and manipulating dates.",
+      "files": [
+        {
+          "path": "src/registry/util/date.ts",
+          "type": "registry:lib"
+        }
+      ]
+    }
+  ]
 }
